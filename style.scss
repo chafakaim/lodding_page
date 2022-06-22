@@ -1,0 +1,330 @@
+
+@import url(./asset/_animation.scss);
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes rotation {
+    0%{
+      transform: rotateZ(0deg);
+    }
+    100%{
+        transform:rotateZ(36Odeg);
+    }
+}
+body{
+    font-family: 'Poppins', sans-serif;
+   background-color: #050406;
+   height: 100vh;
+}
+a{
+    color:inherit;
+}
+
+
+main{
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+
+.left{
+flex: 5;
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 100%;
+height: 100%;
+header{
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #f1f1f1;
+    width: 100%;
+    .logo{
+        margin-right:100px ;
+       a{
+           font-size: 1.5em;
+       }
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    ul{
+        width: 100%;
+        display: flex;
+        gap: 30px;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        li{
+          a{
+              font-size: 13px;
+          }
+        }
+    }
+
+}
+
+.images{
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height: 100%;
+
+    .image_chine{
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        display: flex;
+        img{
+            width: 90%;
+            margin-left: 50px;
+        }
+    }
+    .image_moto{
+        display: flex;
+        .moto{
+            opacity: 0;
+            position: relative;
+            animation: fade linear 2s forwards;
+            img{
+                width:80%;
+                transition: .5s all;
+            }
+            .absol{
+               position: absolute;
+               right:50px;
+               top: 30px;
+               width: 20%;
+               transition:.5s all;
+               animation: rotation linear 1s infinite;
+            }
+        }
+        .roue{
+            height:50% ;
+            position: relative;
+            z-index: 1;
+            transform: translateX(100px);
+            img{
+                width: 90%;
+            }
+        }
+
+    }
+
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #f1f1f1;
+     .slides{
+         flex: 5;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         .slide{
+           flex: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+           .bar{
+              width: 200Px;
+              height: 10px;
+              background-color:gray;
+              margin: 0 30Px;
+              span{
+                display: block;
+                width: 50%;
+                height: 100%;
+                background: white;
+            }
+            }
+         }
+         p{
+             flex: 5;
+             font-size: 11px;
+         }
+     }
+    .image{
+        flex: 1;
+        text-align: right;
+        img{
+            width: 100%;
+        }
+    }
+}
+}
+
+.right{
+flex:2;
+width: 100%;
+height: 100%;
+z-index: 0;
+display:flex;
+flex-direction: column;
+color:#f1f1f1;
+
+.gradient{
+    height: 40%;
+    img{
+        width: 100%;
+        height: 90%;
+        position: relative;
+        z-index: -1;
+    }
+}
+.listes{
+    align-self: flex-end;
+    margin-right:10Px ;
+    width: 70%;
+    padding: 20Px;
+
+    .liste{
+       display: flex;
+       padding: 0 12px;
+        margin-bottom: 30Px;
+       .text_vertical{
+           font-size: 0.8em;
+         writing-mode: vertical-lr;
+         padding: 0 10px; 
+         text-align: center;
+              }
+              .text{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  
+                  p,span{
+                      font-size: 0.8em;
+                  }
+                  h4{
+                      font-size:1.3em;
+                  }
+              }
+    }
+    
+    .liste:last-child{
+        margin-bottom:0;
+    }
+}
+}
+}
+@media (max-width:1000px){
+    main{
+
+
+        flex-wrap:wrap;
+        .left{
+              .roue{
+                  transform: translate(0);
+                  display: none;
+              }
+
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            .gradient{
+                display: none;
+            }
+            .listes{
+                width: 100%!important;
+                display: flex;
+                padding: 5px;
+                align-items: center;
+                justify-content: flex-start;
+                margin-top: 30px;
+            }
+        }
+
+
+    }
+}
+@media (max-width : 570px){
+
+     main{
+         padding:0 10px;
+
+         .left{
+            position:relative;
+
+
+            .image_moto{
+                align-items: center;
+                justify-content: center;
+            }
+          header{
+            nav{
+                justify-content: flex-end;
+               .lines{
+                   text-align: right;
+                   cursor: pointer;
+                   .line{
+                       height: 2px;
+                       width: 20Px;
+                       background-color: white;
+                   }
+                   .line:not(:last-child){
+                       margin-bottom: 4px;
+                   }
+               }
+                ul{
+                    position:absolute;
+                    width: 100%;
+                    height: 100%;
+                    bottom: -90px;
+                    background-color: #050406;
+                    backdrop-filter:bleur(.5) ;                    
+                    left: 0;
+                    z-index: 999;
+                    flex-direction: column;
+                    height: 100%;
+                    display: none;
+
+                }
+            }
+          }
+
+          footer{
+           flex-direction: column!important;
+          
+           img{
+               display: none;
+           }
+        }
+         }
+
+         .right{
+
+
+            .listes{
+                flex-direction: column;
+            }
+         }
+     }
+
+ 
+}

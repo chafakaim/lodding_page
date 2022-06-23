@@ -294,7 +294,7 @@ color:#f1f1f1;
                 ul{
                     position:absolute;
                     width: 100%;
-                    height: 100%;
+                    height: 0;
                     bottom: -90px;
                     background-color: #050406;
                     backdrop-filter:bleur(.5) ;                    
@@ -303,6 +303,7 @@ color:#f1f1f1;
                     flex-direction: column;
                     height: 100%;
                     display: none;
+                    transition:1s all;
 
                 }
             }
@@ -327,4 +328,11 @@ color:#f1f1f1;
      }
 
  
+}
+.nav ul.fade{
+    display: flex;
+    transition: 1s all;
+}
+.nav ul.fade.in{
+    height: 100%;
 }

@@ -517,8 +517,8 @@ nav ul.fade {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 1s all;
-  transition: 1s all;
+  -webkit-transition: 2s all;
+  transition: 2s all;
 }
 
 nav ul.fade.in {
